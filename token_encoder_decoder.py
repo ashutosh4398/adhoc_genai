@@ -9,7 +9,6 @@ class CustomTokenizer:
     
     def decode(self, number: int) -> str:
         hex_back = hex(number)[2:]
-        # 6. If needed, pad hex string to make byte-aligned
         if len(hex_back) % 2 != 0:
             hex_back = '0' + hex_back
         return bytes.fromhex(hex_back).decode("utf-8")
